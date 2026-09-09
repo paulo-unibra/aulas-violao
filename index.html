@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Curso de Teoria Musical — Cifra Club</title>
+  <style>
+    :root{--bg:#0b0d10;--panel:#12161c;--panel2:#171c24;--text:#f5f7fa;--muted:#9aa4b2;--accent:#ff7a00;--accent2:#ff9b3d;--border:rgba(255,255,255,.08);--radius:18px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at top right,rgba(255,122,0,.10),transparent 28rem),var(--bg);color:var(--text);min-height:100vh}
+    .shell{width:min(1440px,calc(100% - 32px));margin:auto;padding:28px 0 48px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:14px}.brand-mark{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:23px}.brand h1{margin:0;font-size:clamp(1.25rem,2vw,1.8rem)}.brand p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+    .progress-wrap{min-width:210px;text-align:right}.progress-label{display:block;color:var(--muted);font-size:.82rem;margin-bottom:7px}.progress{height:7px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}.progress span{display:block;width:11.11%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.25s}
+    .layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(310px,.8fr);gap:24px;align-items:start}.player-card,.playlist-card{background:rgba(18,22,28,.94);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 18px 50px rgba(0,0,0,.35)}.player-card{overflow:hidden}.video-wrap{position:relative;aspect-ratio:16/9;background:#000}.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.lesson-info{padding:22px}.lesson-kicker{color:var(--accent2);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.lesson-info h2{margin:8px 0 10px;font-size:clamp(1.4rem,2.2vw,2rem)}.lesson-info p{margin:0;color:var(--muted);line-height:1.65}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:750;cursor:pointer;text-decoration:none}.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white}.btn-secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border)}
+    .playlist-card{padding:16px;position:sticky;top:18px;max-height:calc(100vh - 36px);overflow:hidden;display:flex;flex-direction:column}.playlist-header{padding:6px 6px 14px;border-bottom:1px solid var(--border);margin-bottom:10px}.playlist-header h3{margin:0}.playlist-header p{margin:5px 0 0;color:var(--muted);font-size:.86rem}.playlist{overflow-y:auto}.lesson-item{width:100%;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;text-align:left;border:1px solid transparent;background:transparent;color:inherit;padding:12px;border-radius:13px;cursor:pointer}.lesson-item:hover{background:rgba(255,255,255,.045)}.lesson-item.active{background:rgba(255,122,0,.10);border-color:rgba(255,122,0,.22)}.lesson-number{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.055);color:var(--muted);font-weight:800}.lesson-item.active .lesson-number{background:var(--accent);color:white}.lesson-title{font-weight:720;line-height:1.35;font-size:.92rem}.lesson-type{color:var(--muted);font-size:.78rem;margin-top:3px}.footer-note{margin-top:24px;color:var(--muted);text-align:center;font-size:.82rem}
+    @media(max-width:960px){.layout{grid-template-columns:1fr}.playlist-card{position:static;max-height:none}} @media(max-width:640px){.shell{width:min(100% - 18px,1440px);padding-top:14px}.topbar{align-items:flex-start;flex-direction:column}.progress-wrap{width:100%;text-align:left}.lesson-info{padding:17px}.playlist-card{padding:10px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">♪</div><div><h1>Teoria Musical — Cifra Club</h1><p>Sequência organizada para estudar do básico às escalas.</p></div></div>
+    <div class="progress-wrap"><span class="progress-label" id="progressLabel">Aula 1 de 9</span><div class="progress"><span id="progressBar"></span></div></div>
+  </header>
+  <section class="layout">
+    <article class="player-card">
+      <div class="video-wrap"><iframe id="player" src="https://www.youtube.com/embed/RWRWMIXaH4k?rel=0" title="Player da aula" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="lesson-info">
+        <span class="lesson-kicker" id="lessonKicker">Aula 01</span>
+        <h2 id="lessonTitle">Introdução à Teoria Musical</h2>
+        <p id="lessonDescription">Comece pelos fundamentos e pela organização geral da teoria musical antes de avançar para intervalos, acordes e escalas.</p>
+        <div class="actions"><button class="btn btn-primary" id="nextLesson">Próxima aula →</button><a class="btn btn-secondary" id="youtubeLink" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=RWRWMIXaH4k">Abrir no YouTube</a></div>
+      </div>
+    </article>
+    <aside class="playlist-card"><div class="playlist-header"><h3>Playlist organizada</h3><p>9 aulas • clique em qualquer item para assistir</p></div><div class="playlist" id="playlist"></div></aside>
+  </section>
+  <p class="footer-note">Os vídeos são reproduzidos pelo player incorporado do YouTube.</p>
+</main>
+<script>
+const lessons=[
+{id:"RWRWMIXaH4k",title:"Introdução à Teoria Musical",type:"Fundamentos",description:"Comece pelos fundamentos e pela organização geral da teoria musical antes de avançar para intervalos, acordes e escalas."},
+{id:"x-HkUeOWGLY",title:"Intervalos — Teoria Musical",type:"Fundamentos",description:"Aprenda a distância entre as notas, essencial para entender acordes, escalas e harmonia."},
+{id:"ZW7V4tma8J4",title:"Formação de Acordes I — Tríades",type:"Acordes",description:"Entenda como acordes básicos são construídos a partir de três notas."},
+{id:"YwpaiSYA9no",title:"Formação de Acordes II — Tétrades",type:"Acordes",description:"Avance das tríades para acordes com quatro notas."},
+{id:"kNo6kz0kDzo",title:"Formação de Acordes III — Notas Acrescentadas",type:"Acordes",description:"Veja como notas adicionais modificam a sonoridade dos acordes."},
+{id:"4a7p1osmXfE",title:"Formação de Acordes IV — Inversões de Baixo",type:"Acordes",description:"Aprenda a reorganizar as notas dos acordes e usar diferentes notas no baixo."},
+{id:"rdonL-OhwL4",title:"Introdução ao Curso de Escalas",type:"Escalas",description:"Faça a transição da formação de acordes para o estudo sistemático das escalas."},
+{id:"ek0phEKndbU",title:"Curso de Escalas I — Pentatônica Menor e Penta-Blues",type:"Escalas",description:"Conheça duas escalas muito utilizadas para improvisação e solos."},
+{id:"lGU-L0EKKCA",title:"Curso de Escalas II — Escala Maior Natural",type:"Escalas",description:"Estude a estrutura da escala maior natural, base para tonalidade e campo harmônico."}
+];
+let currentIndex=0;const playlist=document.getElementById("playlist"),player=document.getElementById("player"),lessonKicker=document.getElementById("lessonKicker"),lessonTitle=document.getElementById("lessonTitle"),lessonDescription=document.getElementById("lessonDescription"),youtubeLink=document.getElementById("youtubeLink"),nextLesson=document.getElementById("nextLesson"),progressLabel=document.getElementById("progressLabel"),progressBar=document.getElementById("progressBar");
+function renderPlaylist(){playlist.innerHTML="";lessons.forEach((lesson,index)=>{const b=document.createElement("button");b.className="lesson-item"+(index===currentIndex?" active":"");b.type="button";b.innerHTML=`<span class="lesson-number">${String(index+1).padStart(2,"0")}</span><span><div class="lesson-title">${lesson.title}</div><div class="lesson-type">${lesson.type}</div></span>`;b.onclick=()=>selectLesson(index,true);playlist.appendChild(b)})}
+function buildEmbedUrl(videoId,autoplay=false){const params=new URLSearchParams({rel:"0"});if(autoplay)params.set("autoplay","1");if(location.protocol==="http:"||location.protocol==="https:")params.set("origin",location.origin);return `https://www.youtube.com/embed/${videoId}?${params.toString()}`}
+function selectLesson(index,autoplay=false){currentIndex=index;const lesson=lessons[index];player.src=buildEmbedUrl(lesson.id,autoplay);lessonKicker.textContent=`Aula ${String(index+1).padStart(2,"0")}`;lessonTitle.textContent=lesson.title;lessonDescription.textContent=lesson.description;youtubeLink.href=`https://www.youtube.com/watch?v=${lesson.id}`;progressLabel.textContent=`Aula ${index+1} de ${lessons.length}`;progressBar.style.width=`${((index+1)/lessons.length)*100}%`;nextLesson.textContent=index===lessons.length-1?"Voltar à primeira aula ↺":"Próxima aula →";renderPlaylist()}
+nextLesson.onclick=()=>selectLesson(currentIndex===lessons.length-1?0:currentIndex+1,true);player.src=buildEmbedUrl(lessons[0].id,false);
+renderPlaylist();
+</script>
+</body>
+</html>
