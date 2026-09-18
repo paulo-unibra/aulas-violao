@@ -1,4 +1,30 @@
 {
-  "updated_at": null,
-  "days": []
+  "updated_at": "2026-09-18",
+  "days": [
+    {
+      "date": "2026-09-18",
+      "items": [
+        {
+          "id": "RWRWMIXaH4k",
+          "title": "Teste 1 — Introdução à Teoria Musical",
+          "channel": "Cifra Club"
+        },
+        {
+          "id": "x-HkUeOWGLY",
+          "title": "Teste 2 — Intervalos",
+          "channel": "Cifra Club"
+        },
+        {
+          "id": "ek0phEKndbU",
+          "title": "Teste 3 — Pentatônica e Penta-Blues",
+          "channel": "Cifra Club"
+        },
+        {
+          "id": "lGU-L0EKKCA",
+          "title": "Teste 4 — Escala Maior Natural",
+          "channel": "Cifra Club"
+        }
+      ]
+    }
+  ]
 }
