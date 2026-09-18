@@ -55,6 +55,29 @@
     .item.active .num{background:var(--accent);color:#fff}.ititle{font-size:.89rem;font-weight:720;line-height:1.3}.isub{font-size:.74rem;color:var(--muted);margin-top:3px}
     .check{font-size:.9rem;color:var(--green);opacity:0}.item.is-done .check{opacity:1}.footer{color:var(--muted);text-align:center;font-size:.8rem;margin:22px 0 0}
     .source-note{margin-top:14px;font-size:.78rem;color:#7f8a99}
+    .section-tabs{display:flex;gap:8px;margin:0 0 17px;padding:5px;background:rgba(17,21,27,.72);border:1px solid var(--border);border-radius:14px;width:max-content;max-width:100%;overflow:auto}
+    .section-tab{border:0;background:transparent;color:var(--muted);padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:800;white-space:nowrap}
+    .section-tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+    [hidden]{display:none!important}
+    .shorts-view{background:rgba(17,21,27,.72);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .shorts-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+    .shorts-head h2{margin:0 0 6px;font-size:1.45rem}.shorts-head p{margin:0;color:var(--muted);line-height:1.55}
+    .shorts-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .shorts-select{background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:11px;padding:10px 12px}
+    .shorts-stats{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--muted);font-size:.88rem}
+    .shorts-daily-progress{height:7px;flex:1;max-width:280px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+    .shorts-daily-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),#65e6a4);transition:.2s}
+    .shorts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+    .short-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.18s ease}
+    .short-card:hover{transform:translateY(-2px);border-color:rgba(255,122,0,.25)}
+    .short-card.random-pick{outline:2px solid var(--accent);box-shadow:0 0 0 5px rgba(255,122,0,.1)}
+    .short-frame{aspect-ratio:9/16;background:#050608;position:relative}.short-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .short-body{padding:13px}.short-title{font-weight:800;line-height:1.35;margin:0 0 5px}.short-channel{color:var(--muted);font-size:.78rem;margin-bottom:11px}
+    .short-actions{display:flex;gap:7px}.short-action{flex:1;border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:8px 9px;border-radius:10px;cursor:pointer;font-size:.8rem;font-weight:760}
+    .short-action.done{color:#a7f3d0;border-color:rgba(57,217,138,.3);background:rgba(57,217,138,.1)}
+    .short-action.favorite{color:#ffd2a6;border-color:rgba(255,122,0,.3);background:rgba(255,122,0,.1)}
+    .shorts-empty{padding:44px 18px;text-align:center;border:1px dashed rgba(255,255,255,.14);border-radius:16px;color:var(--muted)}
+    .shorts-empty .emoji{font-size:38px;margin-bottom:10px}.shorts-empty h3{margin:0 0 7px;color:var(--text)}
     @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:static;max-height:none}.list{overflow:visible}}
     @media(max-width:650px){.shell{width:min(100% - 18px,1500px);padding-top:14px}.topbar{align-items:flex-start;flex-direction:column}.progress-wrap{width:100%;text-align:left}
       .lesson-info{padding:17px}.sidebar{padding:9px}.media{aspect-ratio:16/10}.resource-hero{padding:23px 18px}}
@@ -70,6 +93,12 @@
     <div class="progress-wrap"><span class="progress-label" id="progressLabel">0 de 25 concluídos</span><div class="progress"><span id="progressBar"></span></div></div>
   </header>
 
+  <nav class="section-tabs" aria-label="Seções do site">
+    <button class="section-tab active" id="courseTab" type="button">📚 Curso</button>
+    <button class="section-tab" id="shortsTab" type="button">🎧 Treino de Ouvido — Shorts</button>
+  </nav>
+
+  <section id="courseView">
   <nav class="filters" id="filters"></nav>
 
   <section class="layout">
@@ -101,7 +130,28 @@
       <div class="list" id="list"></div>
     </aside>
   </section>
-  <p class="footer">Seu progresso fica salvo apenas neste navegador.</p>
+  </section>
+
+  <section id="shortsView" class="shorts-view" hidden>
+    <div class="shorts-head">
+      <div>
+        <h2>🎧 Treino de Ouvido — Shorts</h2>
+        <p>10 músicas a capela por dia para treinar reconhecimento de melodia, tonalidade, intervalos e afinação.</p>
+      </div>
+      <div class="shorts-controls">
+        <select class="shorts-select" id="shortsDate" aria-label="Escolher data"></select>
+        <button class="btn secondary" id="randomShortBtn" type="button">🎲 Short aleatório</button>
+      </div>
+    </div>
+    <div class="shorts-stats">
+      <strong id="shortsProgressText">0/10 treinados</strong>
+      <div class="shorts-daily-progress"><span id="shortsProgressBar"></span></div>
+      <span id="shortsCountText"></span>
+    </div>
+    <div class="shorts-grid" id="shortsGrid"></div>
+  </section>
+
+  <p class="footer">Seu progresso das aulas e dos Shorts fica salvo apenas neste navegador.</p>
 </main>
 
 <script>
@@ -226,7 +276,105 @@ function select(index, autoplay=false){
 completeBtn.onclick=()=>{completed.has(current)?completed.delete(current):completed.add(current);save();select(current,false)};
 nextBtn.onclick=()=>select(current===lessons.length-1?0:current+1,true);
 
-renderFilters();updateProgress();select(0,false);
+
+const courseTab=el("courseTab"), shortsTab=el("shortsTab"), courseView=el("courseView"), shortsView=el("shortsView");
+const shortsGrid=el("shortsGrid"), shortsDate=el("shortsDate"), randomShortBtn=el("randomShortBtn");
+const shortsProgressText=el("shortsProgressText"), shortsProgressBar=el("shortsProgressBar"), shortsCountText=el("shortsCountText");
+let shortsData={days:[]};
+let activeShortsDate="";
+const watchedShorts=new Set(JSON.parse(localStorage.getItem("violaoShortsWatched")||"[]"));
+const favoriteShorts=new Set(JSON.parse(localStorage.getItem("violaoShortsFavorites")||"[]"));
+
+function showSection(section){
+  const isCourse=section==="course";
+  courseView.hidden=!isCourse;shortsView.hidden=isCourse;
+  courseTab.classList.toggle("active",isCourse);shortsTab.classList.toggle("active",!isCourse);
+  localStorage.setItem("violaoActiveSection",section);
+}
+courseTab.onclick=()=>showSection("course");
+shortsTab.onclick=()=>showSection("shorts");
+
+function shortKey(date,id){return date+"::"+id}
+function saveShortState(){
+  localStorage.setItem("violaoShortsWatched",JSON.stringify([...watchedShorts]));
+  localStorage.setItem("violaoShortsFavorites",JSON.stringify([...favoriteShorts]));
+}
+function shortEmbed(id){
+  const p=new URLSearchParams({rel:"0"});
+  if(location.protocol==="http:"||location.protocol==="https:")p.set("origin",location.origin);
+  return "https://www.youtube.com/embed/"+id+"?"+p.toString();
+}
+function currentShortDay(){return shortsData.days.find(d=>d.date===activeShortsDate)}
+function formatDatePtBr(date){
+  if(!date)return "";
+  const parts=date.split("-");
+  return parts.length===3 ? parts[2]+"/"+parts[1]+"/"+parts[0] : date;
+}
+function updateShortsProgress(){
+  const day=currentShortDay(), items=day?.items||[];
+  const done=items.filter(x=>watchedShorts.has(shortKey(day.date,x.id))).length;
+  const total=items.length;
+  shortsProgressText.textContent=done+"/"+total+" treinados";
+  shortsProgressBar.style.width=(total?done/total*100:0)+"%";
+  shortsCountText.textContent=total ? total+" Shorts nesta data" : "";
+}
+function renderShortDates(){
+  shortsDate.innerHTML="";
+  if(!shortsData.days.length){
+    const o=document.createElement("option");o.textContent="Sem Shorts ainda";o.value="";shortsDate.appendChild(o);return;
+  }
+  shortsData.days.slice().sort((a,b)=>b.date.localeCompare(a.date)).forEach(day=>{
+    const o=document.createElement("option");o.value=day.date;o.textContent=formatDatePtBr(day.date);shortsDate.appendChild(o);
+  });
+  if(!activeShortsDate||!shortsData.days.some(d=>d.date===activeShortsDate)){
+    activeShortsDate=shortsData.days.slice().sort((a,b)=>b.date.localeCompare(a.date))[0].date;
+  }
+  shortsDate.value=activeShortsDate;
+}
+function renderShorts(){
+  shortsGrid.innerHTML="";
+  const day=currentShortDay();
+  const items=day?.items||[];
+  if(!items.length){
+    shortsGrid.innerHTML='<div class="shorts-empty" style="grid-column:1/-1"><div class="emoji">🎙️</div><h3>Ainda não há Shorts adicionados</h3><p>Quando a busca diária começar a alimentar o arquivo <code>shorts.json</code>, os 10 vídeos do dia aparecerão aqui automaticamente.</p></div>';
+    updateShortsProgress();return;
+  }
+  items.forEach((item,index)=>{
+    const key=shortKey(day.date,item.id);
+    const card=document.createElement("article");card.className="short-card";card.dataset.shortIndex=String(index);
+    card.innerHTML='<div class="short-frame"><iframe loading="lazy" src="'+shortEmbed(item.id)+'" title="'+(item.title||"YouTube Short").replace(/"/g,"&quot;")+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'+
+      '<div class="short-body"><div class="short-title">'+(item.title||"Short a capela")+'</div><div class="short-channel">'+(item.channel||"YouTube")+'</div>'+
+      '<div class="short-actions"><button type="button" class="short-action watch'+(watchedShorts.has(key)?" done":"")+'">'+(watchedShorts.has(key)?"✓ Treinado":"Marcar treinado")+'</button>'+
+      '<button type="button" class="short-action fav'+(favoriteShorts.has(key)?" favorite":"")+'">'+(favoriteShorts.has(key)?"★ Favorito":"☆ Favoritar")+'</button></div></div>';
+    card.querySelector(".watch").onclick=()=>{
+      watchedShorts.has(key)?watchedShorts.delete(key):watchedShorts.add(key);saveShortState();renderShorts();
+    };
+    card.querySelector(".fav").onclick=()=>{
+      favoriteShorts.has(key)?favoriteShorts.delete(key):favoriteShorts.add(key);saveShortState();renderShorts();
+    };
+    shortsGrid.appendChild(card);
+  });
+  updateShortsProgress();
+}
+shortsDate.onchange=()=>{activeShortsDate=shortsDate.value;renderShorts()};
+randomShortBtn.onclick=()=>{
+  const cards=[...shortsGrid.querySelectorAll(".short-card")];
+  if(!cards.length)return;
+  cards.forEach(c=>c.classList.remove("random-pick"));
+  const card=cards[Math.floor(Math.random()*cards.length)];
+  card.classList.add("random-pick");card.scrollIntoView({behavior:"smooth",block:"center"});
+};
+async function loadShorts(){
+  try{
+    const r=await fetch("./shorts.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("shorts.json não encontrado");
+    const data=await r.json();
+    shortsData={days:Array.isArray(data.days)?data.days:[]};
+  }catch(e){shortsData={days:[]}}
+  renderShortDates();renderShorts();
+}
+
+renderFilters();updateProgress();select(0,false);loadShorts();showSection(localStorage.getItem("violaoActiveSection")==="shorts"?"shorts":"course");
 </script>
 </body>
 </html>
