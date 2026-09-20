@@ -1,0 +1,38 @@
+name: Atualizar Shorts de treino
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 12 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-shorts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Buscar novos Shorts
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/update-shorts.js
+
+      - name: Salvar lista atualizada
+        run: |
+          if git diff --quiet -- shorts.json; then
+            echo "Nenhuma alteração para salvar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shorts.json
+          git commit -m "chore: atualiza Shorts de treino"
+          git push
