@@ -4,17 +4,101 @@
     {
       "date": "2026-09-18",
       "items": [
-        {"id":"VuFk9fzqxpQ","title":"Só Quem Tem Raiz","channel":"Cantando sem Instrumentos","url":"https://www.youtube.com/shorts/VuFk9fzqxpQ"},
-        {"id":"t3LVbuyeWwY","title":"Sobrevivi — Parte 2","channel":"Cantando sem Instrumentos","url":"https://www.youtube.com/shorts/t3LVbuyeWwY"},
-        {"id":"1RVDYjn1Wcc","title":"Sobrevivi — Parte 1","channel":"Cantando sem Instrumentos","url":"https://www.youtube.com/shorts/1RVDYjn1Wcc"},
-        {"id":"V-QBLA-nB8k","title":"Tá Chorando Por Quê? — Parte 2","channel":"Cantando sem Instrumentos","url":"https://www.youtube.com/shorts/V-QBLA-nB8k"},
-        {"id":"z9JPBqlHafw","title":"Tá Chorando Por Quê? — Parte 1","channel":"Cantando sem Instrumentos","url":"https://www.youtube.com/shorts/z9JPBqlHafw"}
+        {
+          "id": "VuFk9fzqxpQ",
+          "title": "Só Quem Tem Raiz",
+          "channel": "Cantando sem Instrumentos",
+          "url": "https://www.youtube.com/shorts/VuFk9fzqxpQ"
+        },
+        {
+          "id": "t3LVbuyeWwY",
+          "title": "Sobrevivi — Parte 2",
+          "channel": "Cantando sem Instrumentos",
+          "url": "https://www.youtube.com/shorts/t3LVbuyeWwY"
+        },
+        {
+          "id": "1RVDYjn1Wcc",
+          "title": "Sobrevivi — Parte 1",
+          "channel": "Cantando sem Instrumentos",
+          "url": "https://www.youtube.com/shorts/1RVDYjn1Wcc"
+        },
+        {
+          "id": "V-QBLA-nB8k",
+          "title": "Tá Chorando Por Quê? — Parte 2",
+          "channel": "Cantando sem Instrumentos",
+          "url": "https://www.youtube.com/shorts/V-QBLA-nB8k"
+        },
+        {
+          "id": "z9JPBqlHafw",
+          "title": "Tá Chorando Por Quê? — Parte 1",
+          "channel": "Cantando sem Instrumentos",
+          "url": "https://www.youtube.com/shorts/z9JPBqlHafw"
+        }
       ]
     },
     {
       "date": "2026-09-20",
       "items": [
-        {"id":"YKf0i0a9Pgg","title":"Hino da harpa acapela (treine seu ouvido) pegue o tom","channel":"Joanderson Souza🎵","url":"https://www.youtube.com/shorts/YKf0i0a9Pgg"}
+        {
+          "id": "Rs-os1fRo0g",
+          "title": "SOLTA O CABO DA NAU - A CAPELA",
+          "channel": "Vanessa Ferreira",
+          "url": "https://www.youtube.com/shorts/Rs-os1fRo0g"
+        },
+        {
+          "id": "i_hcZUHj4xc",
+          "title": "Um pecador remido - Hino da harpa 171 (acapella)",
+          "channel": "Vanessa Ferreira",
+          "url": "https://www.youtube.com/shorts/i_hcZUHj4xc"
+        },
+        {
+          "id": "mirMt4hwrT4",
+          "title": "Chuvas de Graça - Harpa Cristã nº 1 (A Capela)",
+          "channel": "Lucas Benkael",
+          "url": "https://www.youtube.com/shorts/mirMt4hwrT4"
+        },
+        {
+          "id": "JiTaLaaNhjE",
+          "title": "Hino 467 Harpa Cristã | A Capela",
+          "channel": "Fran Martins",
+          "url": "https://www.youtube.com/shorts/JiTaLaaNhjE"
+        },
+        {
+          "id": "5rC4EMqtKsY",
+          "title": "Mais grato a ti 🙏🏽 Hino 370 da Harpa Cristã a capela #maisgratoati #harpacristã",
+          "channel": "Priscilla Betânia",
+          "url": "https://www.youtube.com/shorts/5rC4EMqtKsY"
+        },
+        {
+          "id": "akE7DpgSa7c",
+          "title": "Chuvas de Graça | 1 da Harpa Cristã #acapella #covercristao #gospel #musica",
+          "channel": "Kéren Hapuque",
+          "url": "https://www.youtube.com/shorts/akE7DpgSa7c"
+        },
+        {
+          "id": "Ar_Urvo_eY4",
+          "title": "O exilado, hino 36 da harpa cristã a capela!  #acapella #hinos #harpacristã #hinosdaharpacrista",
+          "channel": "Enderson Bispo",
+          "url": "https://www.youtube.com/shorts/Ar_Urvo_eY4"
+        },
+        {
+          "id": "_cbJ2-2b8Ak",
+          "title": "A Ele a Glória - Ministério Vox - A Capela #shortvideo #musica #louvor",
+          "channel": "Savio Oliveira USA",
+          "url": "https://www.youtube.com/shorts/_cbJ2-2b8Ak"
+        },
+        {
+          "id": "cYGJMrEO9JY",
+          "title": "Hino 545 da Harpa Cristã - Série: Resgatando Valores 💙 #harpacristã #acapella #covergospel #gospel",
+          "channel": "Ester Carvalho",
+          "url": "https://www.youtube.com/shorts/cYGJMrEO9JY"
+        },
+        {
+          "id": "O9wc2xjxS4s",
+          "title": "Você lembra desse Louvor? (Cantando a capela) #louvor #harpacristã #vocelembra #remember",
+          "channel": "Alana Marques",
+          "url": "https://www.youtube.com/shorts/O9wc2xjxS4s"
+        }
       ]
     }
   ]
