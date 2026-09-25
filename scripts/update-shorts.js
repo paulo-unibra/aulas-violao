@@ -10,10 +10,16 @@ const MAX_SHORT_SECONDS = 180;
 const QUERIES = [
   "hino gospel a capela português sem instrumentos",
   "música gospel acapella português sem instrumento",
-  "hino da harpa a capela português"
+  "hino da harpa a capela português",
+  "harpa cristã acapella português",
+  "louvor gospel a capela português",
+  "cover gospel acapella português",
+  "hino evangélico a capela português",
+  "hino cristão acapella português"
 ];
 const REQUIRED = /\b(a\s*cappella|a\s*capela|acapella|sem\s+instrument)/i;
-const GOSPEL = /\b(hino|harpa|gospel|louvor|adoração|crist[ãa]|jesus|deus)\b/i;
+const GOSPEL = /\b(hino|harpa|gospel|louvor|adoração|crist[ãa]|jesus|deus|senhor|cristo|igreja)\b/i;
+const PORTUGUESE = /\b(deus|jesus|senhor|cristo|louvor|hino|harpa|adoração|graça|salvação|pecador|remido|cruz|santo|igreja|irmãos|porque|vive|caminho|chuvas|amor|fé)\b/i;
 const REJECTED = /\b(violão|guitarra|piano|teclado|bateria|playback|instrumental|karaok[eê]|cover instrumental)\b/i;
 
 function isoDurationToSeconds(value) {
@@ -35,26 +41,50 @@ async function youtube(path, params) {
 
 async function main() {
   const data = JSON.parse(fs.readFileSync(FILE, "utf8"));
-  const usedIds = new Set(data.days.flatMap((day) => day.items.map((item) => item.id)));
+  const today = new Date().toISOString().slice(0, 10);
+
+  // Não repete vídeos de dias anteriores. Em uma nova execução no mesmo dia,
+  // os vídeos do próprio dia podem reaparecer para não forçar uma troca vazia.
+  const usedIds = new Set(
+    data.days
+      .filter((day) => day.date !== today)
+      .flatMap((day) => day.items.map((item) => item.id))
+  );
   const searchResults = new Map();
 
   for (const query of QUERIES) {
-    const result = await youtube("search", {
-      part: "snippet",
-      q: query,
-      type: "video",
-      videoDuration: "short",
-      relevanceLanguage: "pt",
-      regionCode: "BR",
-      maxResults: "50"
-    });
+    let pageToken = "";
+    for (let page = 0; page < 2; page += 1) {
+      const params = {
+        part: "snippet",
+        q: query,
+        type: "video",
+        videoDuration: "short",
+        relevanceLanguage: "pt",
+        regionCode: "BR",
+        maxResults: "50"
+      };
+      if (pageToken) params.pageToken = pageToken;
 
-    for (const item of result.items || []) {
-      const id = item.id?.videoId;
-      const text = [item.snippet?.title, item.snippet?.description].join(" ");
-      if (id && !usedIds.has(id) && REQUIRED.test(text) && GOSPEL.test(text) && !REJECTED.test(text)) {
-        searchResults.set(id, item);
+      const result = await youtube("search", params);
+
+      for (const item of result.items || []) {
+        const id = item.id?.videoId;
+        const text = [item.snippet?.title, item.snippet?.description].join(" ");
+        if (
+          id &&
+          !usedIds.has(id) &&
+          REQUIRED.test(text) &&
+          GOSPEL.test(text) &&
+          PORTUGUESE.test(text) &&
+          !REJECTED.test(text)
+        ) {
+          searchResults.set(id, item);
+        }
       }
+
+      pageToken = result.nextPageToken || "";
+      if (!pageToken) break;
     }
   }
 
@@ -79,12 +109,18 @@ async function main() {
     }))
     .slice(0, LIMIT);
 
-  if (items.length < LIMIT) {
-    console.log("Nenhuma alteração: foram encontrados apenas " + items.length + " candidatos inéditos que passaram pelo filtro.");
+  if (items.length === 0) {
+    console.log("Nenhuma alteração: nenhum candidato inédito passou pelos filtros.");
     return;
   }
 
-  const today = new Date().toISOString().slice(0, 10);
+  if (items.length < LIMIT) {
+    console.log(
+      "Aviso: foram encontrados apenas " + items.length +
+      " candidatos confirmados. O dia será atualizado mesmo assim, sem preencher com vídeos inadequados."
+    );
+  }
+
   const dayIndex = data.days.findIndex((day) => day.date === today);
   const day = { date: today, items };
   if (dayIndex >= 0) data.days[dayIndex] = day;
@@ -92,7 +128,7 @@ async function main() {
 
   data.updated_at = today;
   fs.writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n");
-  console.log("shorts.json atualizado com 10 vídeos para " + today + ".");
+  console.log("shorts.json atualizado com " + items.length + " vídeo(s) para " + today + ".");
 }
 
 main().catch((error) => {
