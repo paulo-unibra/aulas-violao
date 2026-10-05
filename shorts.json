@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04",
+  "updated_at": "2026-10-05",
   "days": [
     {
       "date": "2026-09-18",
@@ -830,6 +830,23 @@
           "title": "Trio Essência   a capela  - Quero Te Amar",
           "channel": "Trio Essência",
           "url": "https://www.youtube.com/shorts/Il6Rs2DTLj8"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "items": [
+        {
+          "id": "t-bcNwzmHk4",
+          "title": "Terra Feliz - Harpa Cristã 614 (A Capela) - Qual o tom dessa Música? #acapela #musica",
+          "channel": "Lucas Benkael",
+          "url": "https://www.youtube.com/shorts/t-bcNwzmHk4"
+        },
+        {
+          "id": "kS3Bdf6BXVk",
+          "title": "Harpa Acapella",
+          "channel": "Flavio Junior",
+          "url": "https://www.youtube.com/shorts/kS3Bdf6BXVk"
         }
       ]
     }
