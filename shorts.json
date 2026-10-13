@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11",
+  "updated_at": "2026-10-13",
   "days": [
     {
       "date": "2026-09-18",
@@ -1076,6 +1076,35 @@
           "title": "Mais Perto Quero Estar (Acapella) - Leonardo Oliveira (Harpa Cristã - 187) #shorts #hinos #louvores",
           "channel": "Leonardo Oliveira (Louvores)",
           "url": "https://www.youtube.com/shorts/9ZgSuHN9yN0"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "items": [
+        {
+          "id": "hAeBHxKtVIs",
+          "title": "Hino 018 - Grata Nova #shortsgospel #coralacapella #coral #acapella #harpacristã",
+          "channel": "Belos Hinos da Harpa Cristã",
+          "url": "https://www.youtube.com/shorts/hAeBHxKtVIs"
+        },
+        {
+          "id": "mg1UHekLFUw",
+          "title": "Os sonhos de Deus | Cover #musica #covercristao #gospel #acapella",
+          "channel": "Kéren Hapuque",
+          "url": "https://www.youtube.com/shorts/mg1UHekLFUw"
+        },
+        {
+          "id": "V04u7JeIm20",
+          "title": "O Preço - Cover - [ Cantora, Kesia Gomes ] #acapella #cover #gospel #louvor",
+          "channel": "Kéren Hapuque",
+          "url": "https://www.youtube.com/shorts/V04u7JeIm20"
+        },
+        {
+          "id": "HVloi74GcpM",
+          "title": "Hino 373 Cristo Jesus o Redentor - Acapella",
+          "channel": "Josi Nogueira",
+          "url": "https://www.youtube.com/shorts/HVloi74GcpM"
         }
       ]
     }
