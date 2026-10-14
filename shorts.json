@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13",
+  "updated_at": "2026-10-14",
   "days": [
     {
       "date": "2026-09-18",
@@ -1105,6 +1105,17 @@
           "title": "Hino 373 Cristo Jesus o Redentor - Acapella",
           "channel": "Josi Nogueira",
           "url": "https://www.youtube.com/shorts/HVloi74GcpM"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "items": [
+        {
+          "id": "9VP03kuC4E4",
+          "title": "Hino 234 CCB O Meu Ser Entrego a Cristo | Hinos CCB Acapella",
+          "channel": "Hinos CCB Acapella",
+          "url": "https://www.youtube.com/shorts/9VP03kuC4E4"
         }
       ]
     }
