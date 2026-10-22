@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21",
+  "updated_at": "2026-10-22",
   "days": [
     {
       "date": "2026-09-18",
@@ -1296,6 +1296,35 @@
           "title": "Hino 260 CCB Sou Servo Inútil, Ó Deus Piedoso | Uma Súplica que Toca o Coração | Hinos CCB Acapella",
           "channel": "Hinos CCB Acapella",
           "url": "https://www.youtube.com/shorts/TB_XQlcTb4k"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "items": [
+        {
+          "id": "SmTVFLVNlW8",
+          "title": "Breve Vem o Dia - Hino 371 - Harpa Cristã - por Felipe Olliv | A capela",
+          "channel": "Verbo Estúdio",
+          "url": "https://www.youtube.com/shorts/SmTVFLVNlW8"
+        },
+        {
+          "id": "zF_x3glAtlk",
+          "title": "Hino 193 - Harpa Cristã #acapela #gospelmusic",
+          "channel": "Caminhe com Fé | Paulo Santos",
+          "url": "https://www.youtube.com/shorts/zF_x3glAtlk"
+        },
+        {
+          "id": "LVRs3BaDTmQ",
+          "title": "Renova-me – Harpa Cristã nº 667 (A Capela)",
+          "channel": "Lucas Benkael",
+          "url": "https://www.youtube.com/shorts/LVRs3BaDTmQ"
+        },
+        {
+          "id": "ysYEvoUYWNI",
+          "title": "Hino 220 CCB - Cristo Voltará | Um Hino Sobre a Volta de Jesus",
+          "channel": "Hinos CCB Acapella",
+          "url": "https://www.youtube.com/shorts/ysYEvoUYWNI"
         }
       ]
     }
