@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-14",
   "days": [
     {
       "date": "2026-09-18",
@@ -1699,6 +1699,23 @@
           "title": "Jesus, Tu És Bom – Harpa Cristã nº 25 (A Capela)",
           "channel": "Lucas Benkael",
           "url": "https://www.youtube.com/shorts/qEzcQKW_iDY"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "items": [
+        {
+          "id": "wB8WxLMpH5U",
+          "title": "Acapella Gospel #01 | Eu Me Rendo",
+          "channel": "Recanto Music",
+          "url": "https://www.youtube.com/shorts/wB8WxLMpH5U"
+        },
+        {
+          "id": "-gdsTU6cUvo",
+          "title": "eu navegarei #louvor #music #cover #ytshorts #ytshort #whatsappstatus #acapella",
+          "channel": "Joel Pereira",
+          "url": "https://www.youtube.com/shorts/-gdsTU6cUvo"
         }
       ]
     }
