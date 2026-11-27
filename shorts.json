@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "days": [
     {
       "date": "2026-09-18",
@@ -1916,6 +1916,29 @@
           "title": "Vem canta comigo! #musica #louvor #louvores #acapella",
           "channel": "Gabi Monteiro",
           "url": "https://www.youtube.com/shorts/ppYxQfhD0Po"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "items": [
+        {
+          "id": "2UFRD3lkUmY",
+          "title": "Você lembra desse louvor? (Cantando a capela) #harpa #louvor #worship",
+          "channel": "Alana Marques",
+          "url": "https://www.youtube.com/shorts/2UFRD3lkUmY"
+        },
+        {
+          "id": "xVeegHxyNkE",
+          "title": "Hino 224 harpa cristã,  é o tempo de segar.  ( a capela).",
+          "channel": "Hinos Cristãos",
+          "url": "https://www.youtube.com/shorts/xVeegHxyNkE"
+        },
+        {
+          "id": "jmmc3xym6Lk",
+          "title": "Turn Your Eyes Upon Jesus | O Soul Are You Weary And Troubled | Acapella Christian Hymn",
+          "channel": "Light Unveiled",
+          "url": "https://www.youtube.com/shorts/jmmc3xym6Lk"
         }
       ]
     }
